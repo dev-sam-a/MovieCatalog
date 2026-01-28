@@ -1,11 +1,10 @@
-package com.example.movies;
+package com.example.movies.presentation.detail;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,11 +16,14 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.movies.R;
+import com.example.movies.presentation.adapter.ReviewsAdapter;
+import com.example.movies.presentation.adapter.TrailersAdapter;
+import com.example.movies.domain.model.Movie;
+import com.example.movies.domain.model.Review;
+import com.example.movies.domain.model.Trailer;
 
 import java.util.List;
-
-import io.reactivex.rxjava3.core.Scheduler;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MovieDetailActivity extends AppCompatActivity {
 

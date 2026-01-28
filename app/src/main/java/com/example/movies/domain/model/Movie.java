@@ -1,4 +1,4 @@
-package com.example.movies;
+package com.example.movies.domain.model;
 
 import androidx.room.Embedded;
 import androidx.room.Entity;

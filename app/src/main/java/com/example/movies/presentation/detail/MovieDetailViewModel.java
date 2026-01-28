@@ -1,4 +1,4 @@
-package com.example.movies;
+package com.example.movies.presentation.detail;
 
 import android.app.Application;
 import android.util.Log;
@@ -7,6 +7,15 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
+import com.example.movies.data.api.ApiFactory;
+import com.example.movies.data.db.MovieDao;
+import com.example.movies.data.db.MovieDatabase;
+import com.example.movies.data.dto.ReviewResponse;
+import com.example.movies.data.dto.TrailerResponse;
+import com.example.movies.domain.model.Movie;
+import com.example.movies.domain.model.Review;
+import com.example.movies.domain.model.Trailer;
 
 import java.util.List;
 
@@ -31,7 +40,7 @@ public class MovieDetailViewModel extends AndroidViewModel {
         movieDao = MovieDatabase.getInstance(application).movieDao();
     }
 
-    public LiveData<Movie> getFavouriteMovie(int movieId){
+    public LiveData<Movie> getFavouriteMovie(int movieId) {
         return movieDao.getFavouriteMovie(movieId);
     }
 
@@ -67,14 +76,14 @@ public class MovieDetailViewModel extends AndroidViewModel {
         compositeDisposable.add(disposable);
     }
 
-    public void insertMovie(Movie movie){
+    public void insertMovie(Movie movie) {
         Disposable disposable = movieDao.insertMovie(movie)
                 .observeOn(Schedulers.io())
                 .subscribe();
         compositeDisposable.add(disposable);
     }
 
-    public void removeMovie(int movieId){
+    public void removeMovie(int movieId) {
         Disposable disposable = movieDao.removeMovie(movieId)
                 .subscribeOn(Schedulers.io())
                 .subscribe();

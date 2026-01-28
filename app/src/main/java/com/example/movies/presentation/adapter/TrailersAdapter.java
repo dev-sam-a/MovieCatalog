@@ -1,4 +1,4 @@
-package com.example.movies;
+package com.example.movies.presentation.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.movies.R;
+import com.example.movies.domain.model.Trailer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +58,7 @@ public class TrailersAdapter extends RecyclerView.Adapter<TrailersAdapter.Traile
         return trailers.size();
     }
 
-    interface OnTrailerClickListener {
+    public interface OnTrailerClickListener {
         void onTrailerClick(Trailer trailer);
     }
 

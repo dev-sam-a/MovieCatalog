@@ -1,22 +1,25 @@
-package com.example.movies;
+package com.example.movies.presentation.main;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.WindowCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.movies.presentation.favourite.FavouriteMoviesActivity;
+import com.example.movies.presentation.adapter.MovieAdapter;
+import com.example.movies.presentation.detail.MovieDetailActivity;
+import com.example.movies.R;
+import com.example.movies.domain.model.Movie;
 
 import java.util.List;
 

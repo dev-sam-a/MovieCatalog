@@ -1,10 +1,12 @@
-package com.example.movies;
+package com.example.movies.data.db;
 
 import android.app.Application;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+
+import com.example.movies.domain.model.Movie;
 
 @Database(entities = {Movie.class},version = 1,exportSchema = false)
 public abstract class MovieDatabase extends RoomDatabase {
@@ -23,5 +25,5 @@ public abstract class MovieDatabase extends RoomDatabase {
         return instance;
     }
 
-    abstract MovieDao movieDao();
+    public abstract MovieDao movieDao();
 }

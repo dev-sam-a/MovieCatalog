@@ -1,5 +1,6 @@
-package com.example.movies;
+package com.example.movies.data.dto;
 
+import com.example.movies.domain.model.Review;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
