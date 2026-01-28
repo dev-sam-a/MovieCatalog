@@ -3,17 +3,25 @@ plugins {
 }
 
 android {
-    namespace = "com.example.movies"
+    namespace = "com.sinful.movies"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.movies"
+        applicationId = "com.sinful.movies"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val key: String = project.property("apikey") as String
+
+        buildConfigField(
+            "String",
+            "API_KEY",
+            "\"$key\""
+        )
     }
 
     buildTypes {
@@ -24,10 +32,14 @@ android {
                 "proguard-rules.pro"
             )
         }
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        buildConfig = true
     }
 }
 
