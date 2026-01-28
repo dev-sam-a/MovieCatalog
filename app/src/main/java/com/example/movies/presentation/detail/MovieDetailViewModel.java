@@ -78,7 +78,7 @@ public class MovieDetailViewModel extends AndroidViewModel {
 
     public void insertMovie(Movie movie) {
         Disposable disposable = movieDao.insertMovie(movie)
-                .observeOn(Schedulers.io())
+                .subscribeOn(Schedulers.io())
                 .subscribe();
         compositeDisposable.add(disposable);
     }

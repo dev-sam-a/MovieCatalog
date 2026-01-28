@@ -21,6 +21,7 @@ import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
 
+    public static final int LOAD_THRESHOLD = 10;
     private List<Movie> movies = new ArrayList<>();
     private OnReachEndListener onReachEndListener;
     private OnMovieClickListener onMovieClickListener;
@@ -68,7 +69,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         holder.textViewRating.setBackground(background);
         holder.textViewRating.setText(String.format("%.1f", rating));
 
-        if (position >= movies.size() - 10 && onReachEndListener != null) {
+        if (position >= movies.size() - LOAD_THRESHOLD && onReachEndListener != null) {
             onReachEndListener.onReachEnd();
         }
 

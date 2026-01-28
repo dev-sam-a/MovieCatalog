@@ -59,9 +59,11 @@ Movie Catalog App демонстрирует работу с сетевым API,
 
 ## 🖼️ UI
 
-Скриншоты интерфейса вынесены в отдельный раздел:
-
-- `/screenshots`
+<p>
+  <img src="app/screenshots/MovieCatalogUI_1.jpg" width="200" />
+  <img src="app/screenshots/MovieCatalogUI_2.jpg" width="200" />
+  <img src="app/screenshots/MovieCatalogUI_3.jpg" width="200" />
+</p>
     
 
 ---
